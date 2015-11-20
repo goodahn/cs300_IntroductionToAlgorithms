@@ -1,0 +1,10 @@
+python 2.7.8
+저는 한번에 2-1,2-2 의 답이 출력되게 하였습니다. 그리고 2-1 문제는 dijkstra 알고리즘을 사용해서 풀었고, 2-2 문제는kosaraju 알고리즘을 사용해서 scc를 찾았습니다.
+그 다음에 sink와 source를 찾는다. 이 때 추가해야 되는 최소한의 edge 수는 sink 의 갯수와 source의 갯수 중에서 최댓값이 된다.
+그리고 sink={t_1,t_2,,,t_n}(out degree 가 0인 점들) souce={s_1,s_2,,,s_m}(in degree 가 0인 점들) 이라고 하면
+t_i에서 s_j가 reachable 하지 않으면 t_i와 s_j를 연결해준다.
+sink 의 점의 갯수가 source 의 점의 갯수보다 많다고 가정하자.
+이 때 모든 t_i가 모든 s_j에 대해서 reachable 한 상황이면 그냥 아무 s_j 와 연결해주면 된다. 그러고 나서 남은 t_k 들은 아무런 s_l과 연결해주면된다.
+soure 의 점의 갯수보다 sink의 점의 갯수가 많을 때에도 비슷하게 하면 된다.
+
+	
