@@ -1,0 +1,8 @@
+Python 2.7.8
+global alignment를 구할 때는 Needleman-Wunsch 알고리즘을 사용하였고
+local alighment를 구할 때는 Smith-Waterman 알고리즘을 사용하였다.
+둘다 dynamic programming 을 이용한 것인데
+Smith-Waterman 알고리즘은 d[i][0]=0, d[0][i]=0 으로 하고 d[i][j]=max(0,d[i-1][j-1]+s(xi,yj),d[i][j-1]+g,d[i-1][j]+g)이
+Needleman-Wunsch 알고리즘은 d[0][0]=0 으로 d[i][j]=max(d[i-1][j-1]+s(xi,yj),d[i][j-1]+g,d[i-1][j]+g) 이다.
+이렇게 각각의 d를 다 채우면 global alignment는 d[m][n] 부터 trace해나가면서 구해나가고
+local alignment는 d의 최댓값에서 trace해나가면서 구하면 된다.
